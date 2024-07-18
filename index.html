@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum Showdown</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="description-box" class="description-box">
+        <h2>Welcome to SUM SHOWDOWN</h2>
+        <p>
+            Rules are as follows:
+            <ul>
+                <li>Choose a number, and the computer will independently select a number.</li>
+                <li>Predict whether the sum of both numbers will be odd or even.</li>
+                <li>If your prediction is correct, you win; otherwise, you lose.</li>
+                <li>The loser will get roasted with a joke from the Computer.</li>
+            </ul>
+        </p>
+        <button id="start-button" class="btn">Understood</button>
+    </div>
+    <div class="container">
+        <img src="Sum-Showdown.jpg" alt="Logo" class="logo"> 
+        <h1>Sum Showdown</h1>
+        <div class="input-section">
+            <input type="number" id="user-number" placeholder="Enter a number" />
+            <div class="choices">
+                <button id="odd" class="button-89" role="button">Odd</button>
+                <button id="even" class="button-89" role="button">Even</button>
+            </div>
+        </div>
+        <div class="result">
+            <p id="message"></p>
+            <p id="joke"></p>
+            <div id="reaction"></div>
+        </div>
+        <div id="particle-container"></div>
+    </div>
+    <footer>
+        <p>A Project by #WAG</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

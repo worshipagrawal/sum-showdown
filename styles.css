@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Playwrite+AU+SA:wght@100..400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Playwrite+AU+SA:wght@100..400&family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+    background-size: 800% 800%;
+    margin: 0;
+    animation: gradientBackground 10s ease infinite;
+    overflow: hidden;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.description-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
+}
+
+.btn {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #fff;
+    background: #333;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    animation: bounce 1s ease infinite;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #444;
+}
+
+.btn:hover::before {
+    content: '👊';
+    font-size: 1.2em;
+}
+
+#fist-emoji {
+    display: none;
+    font-size: 3em;
+    animation: punchIn 0.5s ease forwards;
+}
+
+@keyframes punchIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+#description-box {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+@keyframes boxToFist {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    80% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 3s ease-in-out;
+    width: 80%;
+    max-width: 400px;
+}
+
+.logo {
+    width: 60px; 
+    border-radius: 50px;
+    margin-bottom: 10px; 
+}
+
+h1 {
+    font-size: 1.8em; 
+    margin-bottom: 10px; 
+    color: #333;
+    font-family: "Handjet", sans-serif;
+    font-weight: 900;
+    animation: slideIn 1s ease-in-out, floatText 3s ease-in-out infinite;
+}
+
+@keyframes floatText {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+.input-section {
+    position: relative;
+}
+
+.choices {
+    margin: 10px 0;
+}
+
+.button-89 {
+  --b: 3px;   
+  --s: .45em;
+  --color: #373B44;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+  font-family: "Tilt Prism", sans-serif;
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+
+.result {
+    margin-top: 20px; 
+    font-size: 1em; 
+    color: #333;
+    font-family: "Playwrite AU SA", cursive;
+    animation: popIn 1s ease-in-out;
+}
+
+#particle-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #ff7e5f;
+    opacity: 0.7;
+    animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
+
+.particle {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    animation: particleAnimation 2s ease-out forwards;
+}
+
+@keyframes particleAnimation {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-300px) scale(0);
+    }
+}
+
+#reaction {
+    font-size: 1.5em; 
+    margin-top: 5px; 
+    animation: pulse 1s ease-in-out;
+}
+
+footer p {
+    margin-top: 10px; 
+    font-size: 1em;
+    font-family: "Cinzel", serif;
+    color: #0f0f0f;
+}
+
+input[type="number"] {
+    font-size: 1em;
+    padding: 8px; 
+    width: 150px; 
+    border-radius: 8px;
+    border: 2px solid transparent;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out, border 0.3s ease-in-out;
+    background: linear-gradient(white, white) padding-box, linear-gradient(to right, #ff7e5f, #feb47b) border-box;
+    animation: pulse 2s infinite;
+}
+
+input[type="number"]:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box, linear-gradient(to right, #feb47b, #ff7e5f) border-box;
+}
+
+input[type="number"]::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+input[type="number"]:focus::placeholder {
+    color: #666;
+}
+
+input[type="number"].shake {
+    animation: shake 0.5s;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/*broken heart*/
+.broken-heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: url('broken-heart.png') no-repeat center center/contain; /* Add your broken heart image */
+    animation: fall 3s linear infinite;
+}
